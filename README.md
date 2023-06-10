@@ -31,22 +31,29 @@ The **test.sh** will compute the itm_socre or itc_score for top_k image-context 
 
 ## Visualization
 1. **context**: "M & D Simple Modern Light Luxury Comfort Good Quality Living Room with a Double Motor Lounge Chair Sofa TE04"
-<figure>
-<img src=imgs/cap1_1.jpg width=200 height=200/>
-<img src=imgs/cap1_2.jpg width=200 height=200/>
-<img src=imgs/cap1_3.jpg width=200 height=200/>
-</figure>
+<table>
+    <tr>
+        <td ><center><img src=imgs/cap1_1.jpg width=200 height=200/></center></td>
+        <td ><center><img src=imgs/cap1_2.jpg width=200 height=200/></center></td>
+        <td ><center><img src=imgs/cap1_3.jpg width=200 height=200/></center></td>
+    </tr>
+</table>
 
-2. **context**: "er tong hua xing che fang ce fan niu niu che 1-3 sui bao bao wan ju che yin le ke zuo ke qi si lun lium che"
-<figure>
-<img src=imgs/cap2_1.jpg width=200 height=200/>
-<img src=imgs/cap2_2.jpg width=200 height=200/>
-<img src=imgs/cap2_3.jpg width=200 height=200/>
-</figure>
 
-3. **context**: "feiyangg/LP Paragraph Style Electric Guitar Tiger Veneer Factory Direct Color Can Be Customized"
-<figure>
-<img src=imgs/cap3_1.jpg width=200 height=200/>
-<img src=imgs/cap3_2.jpg width=200 height=200/>
-<img src=imgs/cap3_3.jpg width=200 height=200/>
-</figure>
+1. **context**: "er tong hua xing che fang ce fan niu niu che 1-3 sui bao bao wan ju che yin le ke zuo ke qi si lun lium che"
+<table>
+    <tr>
+        <td ><center><img src=imgs/cap2_1.jpg width=200 height=200/></center></td>
+        <td ><center><img src=imgs/cap2_2.jpg width=200 height=200/></center></td>
+        <td ><center><img src=imgs/cap2_3.jpg width=200 height=200/></center></td>
+    </tr>
+</table>
+
+1. **context**: "feiyangg/LP Paragraph Style Electric Guitar Tiger Veneer Factory Direct Color Can Be Customized"
+<table>
+    <tr>
+        <td ><center><img src=imgs/cap3_1.jpg width=200 height=200/></center></td>
+        <td ><center><img src=imgs/cap3_2.jpg width=200 height=200/></center></td>
+        <td ><center><img src=imgs/cap3_3.jpg width=200 height=200/></center></td>
+    </tr>
+</table>
