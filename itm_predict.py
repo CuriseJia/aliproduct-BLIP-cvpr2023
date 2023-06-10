@@ -13,7 +13,6 @@ from models.blip_vqa import blip_vqa
 from models.blip_itm import blip_itm
 
 def load_image(image, image_size, device, index, batch):
-    # print('start load image')
     images = []
     for i in range(batch):
         raw_image = Image.open(image[index+i]).convert('RGB')
@@ -25,7 +24,6 @@ def load_image(image, image_size, device, index, batch):
             transforms.ToTensor(),
             transforms.Normalize((0.48145466, 0.4578275, 0.40821073), (0.26862954, 0.26130258, 0.27577711))
         ])
-        # img = transform(raw_image).unsqueeze(0).to(device)
         img = transform(raw_image).to(device)
         images.append(img)
     
@@ -37,14 +35,11 @@ def predict(image, caption, args):
     assert caption is not None, 'Please type a caption for mage text matching task.'
 
     device = args.device
-    # im = load_image(image, image_size=384, device=device)
-    # print('success load.')
     model = blip_itm(pretrained=args.pretrained ,image_size=384, vit='large', vit_grad_ckpt=True, vit_ckpt_layer=10)
     model.eval()
     model = model.to(device)
     print('success model init')
     
-    # b,_,_,_ = im.shape
     l = len(caption)
     p=0
     total = args.end - args.start
@@ -52,12 +47,9 @@ def predict(image, caption, args):
     total = total//args.batch
     
     for i in tqdm(range(total)):
-        
         img_temp = load_image(image, 384, device, p, args.batch)
-
         p+=args.batch
 
-        # print(img_temp.shape)
         for j in tqdm(range(l)):
             ca_temp = caption[j]
             itm_output = model(img_temp, ca_temp, match_head='itm')  #
@@ -81,9 +73,9 @@ def predict(image, caption, args):
 
 
 def main(args):
-    images_path = '/public/home/jiayanhao/airproduct/test_imgs/'
+    images_path = '../airproduct/test_imgs/'
     p = os.listdir(images_path)
-    cap_path = '/public/home/jiayanhao/airproduct/test_captions.json'
+    cap_path = '../airproduct/test_captions.json'
     images = []
     captions = []
     for i in range(args.start, args.end):
@@ -115,12 +107,9 @@ if __name__=="__main__":
     parser.add_argument('--save_top5_values', type=str, default='result/top5.npy')
     parser.add_argument('--save_top10_values', type=str, default='result/top10.npy')
     parser.add_argument('--save_result', type=str, default='result/test_result.npy')
-    parser.add_argument('--pretrained', type=str, default='/public/home/jiayanhao/BLIP/output/epoch_16_nccl.pth')
+    parser.add_argument('--pretrained', type=str, default='../BLIP/output/epoch_16_nccl.pth')
     parser.add_argument('--device', type=str, default='cuda:3')
     parser.add_argument('--batch', type=int, default=10)
     args = parser.parse_args()
     
     main(args)
-
-
-
