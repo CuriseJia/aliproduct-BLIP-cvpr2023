@@ -1,0 +1,6 @@
+{alpha: 0.4, batch_size_test: 1, batch_size_train: 16, dataset: airproduct, image_size: 384,
+init_lr: 5e-06, k_test: 5, max_epoch: 6, min_lr: 0, negative_all_rank: false, pretrained: /public/home/jiayanhao/BLIP/output/epoch_10_nccl.pth,
+queue_size: 57600, test_image_path: /public/home/jiayanhao/airproduct/val/, test_json_path: /public/home/jiayanhao/airproduct/val.json,
+train_image_path: /public/home/jiayanhao/airproduct/train/, train_json_path: /public/home/jiayanhao/airproduct/train.json,
+val_image_path: /public/home/jiayanhao/airproduct/val/, val_json_path: /public/home/jiayanhao/airproduct/val.json,
+vit: large, vit_ckpt_layer: 10, vit_grad_ckpt: true, weight_decay: 0.05}

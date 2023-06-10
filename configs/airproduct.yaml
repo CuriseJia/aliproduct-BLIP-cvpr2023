@@ -1,0 +1,47 @@
+# train_image_path: '../airproduct/train/'
+train_image_path: '../airproduct/train/'
+val_image_path: '../airproduct/val/'
+test_image_path: '../airproduct/val/'
+
+train_json_path: '../airproduct/train.json'
+# train_json_path: '../airproduct/less.json'
+# val_json_path: '../airproduct/half_val.json'
+val_json_path: '../airproduct/val.json'
+test_json_path: '../airproduct/val.json'
+# test_json_path: '../airproduct/less.json'
+
+dataset: 'airproduct'
+
+# set pretrained as a file path or an url
+# pretrained: 'https://storage.googleapis.com/sfr-vision-language-research/BLIP/models/model_base_retrieval_flickr.pth'
+
+pretrained: 'output/epoch_10_nccl.pth'
+# pretrained: False
+
+# size of vit model; base or large
+
+# vit: 'base'
+# batch_size_train: 32
+# batch_size_test: 64
+# vit_grad_ckpt: True
+# vit_ckpt_layer: 4
+# init_lr: 1e-5
+
+vit: 'large'
+batch_size_train: 16
+batch_size_test: 1
+vit_grad_ckpt: True
+vit_ckpt_layer: 10
+init_lr: 5e-6
+
+image_size: 384
+queue_size: 57600
+alpha: 0.4
+k_test: 5
+negative_all_rank: False
+
+# optimizer
+weight_decay: 0.05
+min_lr: 0
+max_epoch: 6
+
